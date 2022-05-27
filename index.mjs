@@ -88,7 +88,7 @@ const createWSolAccount = async () => {
 const getCoinQuote = (inputMint, outputMint, amount) =>
   got
     .get(
-      `https://quote-api.jup.ag/v1/quote?outputMint=${outputMint}&inputMint=${inputMint}&amount=${amount}&slippage=0.45`
+      `https://quote-api.jup.ag/v1/quote?outputMint=${outputMint}&inputMint=${inputMint}&amount=${amount}&slippage=0.6`
     )
     .json();
 
@@ -136,8 +136,8 @@ const getConfirmTransaction = async (txid) => {
 // require wsol to start trading, this function create your wsol account and fund 1 SOL to it
 await createWSolAccount();
 
-// initial 40 USDC for quote
-const initial = 40_000_000;
+// initial 30 USDC for quote
+const initial = 30_000_000;
 
 while (true) {
   // 0.1 SOL
